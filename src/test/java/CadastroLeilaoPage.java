@@ -2,11 +2,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import java.util.concurrent.ThreadLocalRandom;
-
 public class CadastroLeilaoPage extends PageObjects{
 
     public static final String URL_LEILOES = "http://localhost:8087/leiloes";
+    public static final String URL_LEILAO_NEW = "http://localhost:8087/leiloes/new";
 
     public CadastroLeilaoPage(WebDriver browser) {
         super(browser);
@@ -51,4 +50,21 @@ public class CadastroLeilaoPage extends PageObjects{
     public boolean isAtualUrlIgualUrlLeiloes() {
         return browser.getCurrentUrl().equals(URL_LEILOES);
     }
+
+    public boolean isNaoContemAlerta() {
+        return browser.findElements(By.cssSelector(".alert.alert-danger")).isEmpty();
+    }
+
+    public boolean isContemTexto(String texto){
+        return browser.getPageSource().contains(texto);
+    }
+
+    public boolean isAtualUrlIgualUrlCadastroLeiloes() {
+        return browser.getCurrentUrl().equals(URL_LEILAO_NEW);
+    }
+
+    public String getTextoAlerta() {
+        return browser.findElement(By.cssSelector(".alert.alert-danger")).getText();
+    }
+
 }
