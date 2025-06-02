@@ -8,12 +8,13 @@ import java.util.concurrent.ThreadLocalRandom;
 public class CadastroLeilaoTest {
 
     private CadastroLeilaoPage cadastroLeilaoPage;
+    private LeiloesPage leiloesPage;
 
     @BeforeEach
     void beforeEach() {
         LoginPage loginPage = new LoginPage();
-        loginPage.efetuarLogin("fulano", "pass");
-        this.cadastroLeilaoPage = loginPage.irParaCadastroLeilao();
+        this.leiloesPage = loginPage.efetuarLogin("fulano", "pass");
+        this.cadastroLeilaoPage = leiloesPage.irParaCadastroLeilao();
     }
 
     @AfterEach

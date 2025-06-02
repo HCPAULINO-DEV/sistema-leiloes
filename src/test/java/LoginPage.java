@@ -56,9 +56,5 @@ public class LoginPage extends PageObjects{
         return browser.findElement(By.cssSelector(".text-light")).getText();
     }
 
-    public CadastroLeilaoPage irParaCadastroLeilao() {
-        browser.navigate().to(URL_LEILAO_NEW);
 
-        return new CadastroLeilaoPage(browser);
-    }
 }
