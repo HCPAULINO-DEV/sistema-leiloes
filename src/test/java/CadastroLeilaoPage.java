@@ -20,19 +20,19 @@ public class CadastroLeilaoPage extends PageObjects{
         return new LeiloesPage(browser);
     }
 
-    private void inserirNomeLeilao(String nome) {
+    public void inserirNomeLeilao(String nome) {
         browser.findElement(By.id("form-nome")).sendKeys(nome);
     }
 
-    private void inserirValorInicialLeilao(String valorInicial) {
+    public void inserirValorInicialLeilao(String valorInicial) {
         browser.findElement(By.id("form-valorInicial")).sendKeys(valorInicial);
     }
 
-    private void inserirDataAberturaLeilao(String dataAbertura) {
+    public void inserirDataAberturaLeilao(String dataAbertura) {
         browser.findElement(By.id("form-dataAbertura")).sendKeys(dataAbertura);
     }
 
-    private void clicarBotaoSalvarLeilao() {
+    public void clicarBotaoSalvarLeilao() {
         browser.findElement(By.id("button")).click();
     }
 
